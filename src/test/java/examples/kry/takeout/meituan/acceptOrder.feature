@@ -2,9 +2,9 @@ Feature: 美团接单接口测试
   Background:
     * call read('createOrder.feature')
     * def orderNo = response.data.thirdOrderNo
-    * def apiUrl = 'http://10.8.9.200:5552/api/waimai/order/acceptOrder/mock?brandId=607035&shopId=880030207&orderId=' + orderNo
+
   Scenario:
-    * url apiUrl
+    * url 'http://10.8.9.200:5552/api/waimai/order/acceptOrder/mock?brandId=607035&shopId=880030209&orderId=' + orderNo
     * method GET
     * status 200
     * match response.code == 1000
